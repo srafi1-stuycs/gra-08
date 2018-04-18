@@ -122,9 +122,8 @@ void parse_file ( char * filename,
                     xvals[1], yvals[1], zvals[1]);
             matrix_mult(peek(pancakes), polygons);
             draw_polygons(polygons, s, c);
-            polygons->lastcol = 0;
-            //free_matrix(polygons);
-            //polygons = new_matrix(4, 4);
+            free_matrix(polygons);
+            polygons = new_matrix(4, 4);
         }//end of box
 
         else if ( strncmp(line, "sphere", strlen(line)) == 0 ) {
@@ -136,9 +135,8 @@ void parse_file ( char * filename,
             add_sphere( polygons, xvals[0], yvals[0], zvals[0], r, step_3d);
             matrix_mult(peek(pancakes), polygons);
             draw_polygons(polygons, s, c);
-            polygons->lastcol = 0;
-            //free_matrix(polygons);
-            //polygons = new_matrix(4, 4);
+            free_matrix(polygons);
+            polygons = new_matrix(4, 4);
         }//end of sphere
 
         else if ( strncmp(line, "torus", strlen(line)) == 0 ) {
@@ -150,9 +148,8 @@ void parse_file ( char * filename,
             add_torus(polygons, xvals[0], yvals[0], zvals[0], r, r1, step_3d);
             matrix_mult(peek(pancakes), polygons);
             draw_polygons(polygons, s, c);
-            polygons->lastcol = 0;
-            //free_matrix(polygons);
-            //polygons = new_matrix(4, 4);
+            free_matrix(polygons);
+            polygons = new_matrix(4, 4);
         }//end of torus
 
         else if ( strncmp(line, "circle", strlen(line)) == 0 ) {
